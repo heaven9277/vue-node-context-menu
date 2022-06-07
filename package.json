@@ -1,0 +1,26 @@
+{
+  "name": "loading-view-vue",
+  "version": "1.0.0",
+  "description": "vue2 数组数据右键菜单 获取当前点击的数据",
+  "author": "zhenghaiwen",
+  "main": "./src/lib/directiveMenu.js",
+  "repository": {
+    "type":"git",
+    "url": "https://github.com/heaven9277/vue-node-context-menu.git"
+  },
+  "private": false,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build"
+  },
+  
+  "dependencies": {
+    "core-js": "^3.6.5",
+    "vue": "^2.6.11"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~4.5.13",
+    "@vue/cli-service": "~4.5.13",
+    "vue-template-compiler": "^2.6.11"
+  }
+}

@@ -4,11 +4,11 @@
  * @Author: zhenghaiwen
  * @Date: 2022-04-12 21:52:37
  * @LastEditors: zhenghaiwen
- * @LastEditTime: 2022-06-07 16:00:44
+ * @LastEditTime: 2022-06-07 16:51:37
 -->
 # loading-view-vue
 ```
-vue 2.0+ 自定义指令 右键获取当前数据和点击菜单的数据
+vue 2.0+ 自定义指令 右键菜单 获取当前数据和点击菜单的数据
 ```
 ## How to use for vue2.0+
 ```bash

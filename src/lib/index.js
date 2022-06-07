@@ -4,17 +4,18 @@
  * @Author: zhenghaiwen
  * @Date: 2022-04-12 15:20:20
  * @LastEditors: zhenghaiwen
- * @LastEditTime: 2022-06-07 15:44:10
+ * @LastEditTime: 2022-06-07 16:51:10
  */
 import contextMenu from './contextMenu.vue'
 //凡是vue插件一定有这个方法。目的是use使用，才能被use引用
 let instance;
 let optionObjs;
 function hideMenu(){
-    if(instance&&instance.$el&&optionObjs){
+    if(instance&&instance.$el){
         instance.visible = false;
-        optionObjs.el.removeChild(instance.$el);
+        document.body.removeChild(instance.$el);
         instance = null;
+        optionObjs = null;
     }
 }
 let install = function (Vue,options) {
@@ -34,11 +35,12 @@ let install = function (Vue,options) {
             data:options
         })
         instance = c.$mount(document.createElement('div'));
-        if(options.el){
-            // const domIdDiv = document.getElementById(domId);
-            options.el.appendChild(instance.$el); //将div添加到body中
-            return;
-        }
+        document.body.appendChild(instance.$el)
+        // if(options.el){
+        //     // const domIdDiv = document.getElementById(domId);
+        //     options.el.appendChild(instance.$el); //将div添加到body中
+        //     return;
+        // }
     }
 }
 export default install

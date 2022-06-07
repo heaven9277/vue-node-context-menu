@@ -4,11 +4,11 @@
  * @Author: zhenghaiwen
  * @Date: 2022-04-11 16:59:09
  * @LastEditors: zhenghaiwen
- * @LastEditTime: 2022-06-07 16:03:22
+ * @LastEditTime: 2022-06-07 16:50:57
 -->
 <template>
-    <ul v-show="visible" :style="{left:left+'px',top:top+'px'}" class="contextmenu" @contextmenu.stop="handlePaste($event)">
-        <li v-for="(item,index) in menu" @click="item.handler(node,item)">
+    <ul v-show="visible" :style="{left:left+'px',top:top+'px'}" class="contextmenu">
+        <li v-for="(item,index) in menu" @click="item.handler(node,item)" @contextmenu.stop="handlePaste($event)">
             <i :class="item.icon" v-if="item.icon"></i><span>{{item.text}}</span>
         </li>
     </ul>
@@ -60,7 +60,7 @@ export default {
 
 .contextmenu li {
   margin: 0;
-  padding: 7px 16px;
+  padding: 8px 50px;
   cursor: pointer;
   color: #000;
 }

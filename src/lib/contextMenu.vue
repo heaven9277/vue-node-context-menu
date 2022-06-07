@@ -4,7 +4,7 @@
  * @Author: zhenghaiwen
  * @Date: 2022-04-11 16:59:09
  * @LastEditors: zhenghaiwen
- * @LastEditTime: 2022-06-07 16:50:57
+ * @LastEditTime: 2022-06-07 17:10:58
 -->
 <template>
     <ul v-show="visible" :style="{left:left+'px',top:top+'px'}" class="contextmenu">
@@ -60,9 +60,17 @@ export default {
 
 .contextmenu li {
   margin: 0;
-  padding: 8px 50px;
   cursor: pointer;
   color: #000;
+  width: 126px;
+  text-align: center;
+  height: 22px;
+  line-height: 22px;
+  font-size: 13px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding: 0px 16px;
 }
 
 .contextmenu li:hover {

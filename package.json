@@ -1,6 +1,6 @@
 {
   "name": "vue-node-context-menu",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "vue2 自定义指令 数组数据右键菜单 获取当前点击的数据",
   "author": "zhenghaiwen",
   "main": "./src/lib/directiveMenu.js",

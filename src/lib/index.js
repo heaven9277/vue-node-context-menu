@@ -4,7 +4,7 @@
  * @Author: zhenghaiwen
  * @Date: 2022-04-12 15:20:20
  * @LastEditors: zhenghaiwen
- * @LastEditTime: 2022-06-07 14:51:04
+ * @LastEditTime: 2022-06-07 15:44:10
  */
 import contextMenu from './contextMenu.vue'
 //凡是vue插件一定有这个方法。目的是use使用，才能被use引用

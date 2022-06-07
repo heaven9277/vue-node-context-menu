@@ -4,10 +4,10 @@
  * @Author: zhenghaiwen
  * @Date: 2022-04-11 16:59:09
  * @LastEditors: zhenghaiwen
- * @LastEditTime: 2022-06-07 15:07:07
+ * @LastEditTime: 2022-06-07 16:03:22
 -->
 <template>
-    <ul v-show="visible" :style="{left:left+'px',top:top+'px'}" class="contextmenu" @contextmenu="handlePaste($event)">
+    <ul v-show="visible" :style="{left:left+'px',top:top+'px'}" class="contextmenu" @contextmenu.stop="handlePaste($event)">
         <li v-for="(item,index) in menu" @click="item.handler(node,item)">
             <i :class="item.icon" v-if="item.icon"></i><span>{{item.text}}</span>
         </li>
@@ -38,8 +38,7 @@ export default {
         },
         handlePaste (event) {
             // 禁用鼠标右键
-            event.preventDefault()
-            return false;
+            event.preventDefault();
         }
     }
 }
@@ -56,7 +55,7 @@ export default {
   font-size: 12px;
   font-weight: 400;
   color: #333;
-  box-shadow: 2px 2px 3px 0 rgba(0, 0, 0, 0.3);
+  box-shadow: 2px 2px 3px 1px rgba(0, 0, 0, 0.3);
 }
 
 .contextmenu li {

@@ -4,59 +4,61 @@
  * @Author: zhenghaiwen
  * @Date: 2022-04-12 21:52:37
  * @LastEditors: zhenghaiwen
- * @LastEditTime: 2022-04-14 17:34:51
+ * @LastEditTime: 2022-06-07 16:00:44
 -->
 # loading-view-vue
 ```
-简易loading加载
+vue 2.0+ 自定义指令 右键获取当前数据和点击菜单的数据
 ```
 ## How to use for vue2.0+
 ```bash
 #import package
-npm i loading-view-vue
+npm i vue-node-context-menu
 
 #use(at your main.js)
-import loadingViewerVue from 'loading-view-vue'
-Vue.use(loadingViewerVue)
+import VueNodeContextMenu from 'vue-node-context-menu';
 
-#api for this  api的使用方法
-#show the loading
-this.$showLoading();
-#hide the loading
-this.$hideLoading();
-
-#api 你可以把它使用在你的任意div下，但是你的div的css必须设置为position:relative。(You can use it for any of your divs, but the CSS for your divs must be set to Position :relative)
-
-#show the loading (domId)为你的父级div的id
-this.$showLoading(domId)
-#hide the loading
-this.$hideLoading(domId)
-
+#how to use 
 #for example 举个例子
-#html:
-<div id="containers">
-</div>
-#js:
-this.$showLoading("containers");
-this.$hideLoading("containers")
-#css:
-
-#containers{
-  width: 500px;
-  height: 500px;
-  position: relative;
+#at your html
+<div v-node-context-menu="{node:item,menu:menu}" v-for="(item,index) in list" ></div>
+#at your js
+node:当前数据
+menu：为右键菜单数据
+list: 当前遍历的数组
+## js list
+data(){
+  return {
+    list:[
+      {
+        name:'1',
+        id:0
+      }
+    ],
+    menu:[
+      {
+        text:"返回",
+        icon:"",
+        handler:this.nodeConextMenu
+      },
+      {
+        text:"重新加载",
+        icon:"",
+        handler:this.nodeConextMenu
+      },
+      {
+        text:"打印",
+        icon:"",
+        handler:this.nodeConextMenu
+      }
+    ]
+  }
 }
-
-# this loading has 8 modes(1-8);
-createApp(App).use(loadingViewerVue,{mode:'1'})
-
-#  you can use yourself loading by url ()
-createApp(App).use(loadingViewerVue,{url:url:require('../src/assets/loading1.svg')});
-
-# look at the mode
-
-http://www.var6.cn/work/1/22/MD%E7%9A%84%E7%BC%96%E7%A8%8B%E4%BD%9C%E5%93%81
-```
-
+methods:{
+  #click menu to callbck  点击菜单选项的回调函数 node 为当前点击的数据，menu为当前点击菜单的对象
+  nodeConextMenu(node,menu){
+    
+  }
+}
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).

@@ -6,7 +6,7 @@
  * @LastEditors: zhenghaiwen
  * @LastEditTime: 2022-06-07 16:51:37
 -->
-# loading-view-vue
+# vue-node-context-menu
 ```
 vue 2.0+ 自定义指令 右键菜单 获取当前数据和点击菜单的数据
 ```
